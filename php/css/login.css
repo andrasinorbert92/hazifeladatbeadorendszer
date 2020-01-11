@@ -1,0 +1,11 @@
+#box #title { /*    margin: 0; margin-bottom: 2rem; text-align: center; font-size: 1.6rem;*/ }
+
+#box #reminder { text-align: center; margin-bottom: 0; }
+
+#box select { width: 100%; margin-bottom: 1rem; }
+
+#box #buttons { display: flex; width: 100%; margin-top: 1.5rem; justify-content: center; }
+
+#box #buttons * { flex-basis: 50%; }
+
+/*# sourceMappingURL=login.css.map */
