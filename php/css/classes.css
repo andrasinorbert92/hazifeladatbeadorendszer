@@ -1,0 +1,19 @@
+#box { width: 40% !important; }
+
+#classchooser { width: 60%; margin: 0 auto; }
+
+#classchooser select { width: 100%; }
+
+.person { display: flex; background: #222; margin-bottom: 1rem; padding: 1rem; }
+
+.person .name { flex-basis: 40%; font-weight: bold; }
+
+.person .grades { flex-basis: 60%; }
+
+.person .grade_item { display: flex; flex-wrap: wrap; background: #333; margin-bottom: 1rem; padding: 0.5rem; }
+
+.person .grade_item .topic { flex-grow: 1; }
+
+.person .grade_item .grade { margin-left: 1rem; }
+
+/*# sourceMappingURL=classes.css.map */
