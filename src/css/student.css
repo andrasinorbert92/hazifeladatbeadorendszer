@@ -1,0 +1,17 @@
+#box { width: 60% !important; }
+
+#hfs { list-style-type: none; margin-left: 0; padding-left: 0; display: grid; grid-template-columns: 1fr 1fr; grid-column-gap: 1rem; grid-row-gap: 3rem; grid-auto-rows: 1fr; margin-bottom: 3rem; }
+
+#hfs .card { background: #222; padding: 1rem; height: 100%; display: flex; flex-direction: column; }
+
+#hfs .card div { flex-grow: 1; }
+
+#hfs .card .subject { text-align: center; font-size: 1.4rem; margin-top: 0; }
+
+#hfs .card .topic { text-align: center; }
+
+#hfs .card .date { text-align: right; }
+
+#hfs .card .flexer { display: flex; flex-direction: row; justify-content: space-between; }
+
+/*# sourceMappingURL=student.css.map */
