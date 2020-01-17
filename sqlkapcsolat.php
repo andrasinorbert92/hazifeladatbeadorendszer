@@ -4,7 +4,7 @@
 	</head>
 <body>
 <?php
-$kapcsolat=mysqli_connect("localhost","root","","regisztracio");
+$kapcsolat=mysqli_connect("http://phpmyadmin.semtex.tk","rft","","BCh32TzA14MyhdsZ");
 mysqli_set_charset($kapcsolat,"utf8mb4");
 ?>
 </body>
