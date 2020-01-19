@@ -1,12 +1,15 @@
 <?php
-// Csak akkor engedd megnyitni ezt a lapot, ha be van lépve a tanár,
-//különben dobd vissza az index.php-ra
+session_start();
+if(!isSet($_SESSION['belepve'])){
+	header("Location:../index.php");
+}
+
 ?>
 
 <html>
   <head>
     <title>Tanári felület</title>
-    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/rft/css/main.css">
   </head>
   <body>
     <h1>Házifeladat-beadó Rendszer</h1>

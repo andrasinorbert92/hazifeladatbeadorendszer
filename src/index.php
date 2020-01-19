@@ -11,11 +11,16 @@ $conn = new mysqli($servername, $username, $password,$dbname);
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
-
-if(isSet($_POST["username"])&&isSet($_POST["password"])&&!isLoggedIn())
+if(isLoggedIn()){
+	if($_SESSION['level']==0)
+			header("Location:student.php");
+		else if($_SESSION['level']==1)
+			header("Location:teacher/dashboard.php");
+}
+else if(isSet($_POST["email"])&&isSet($_POST["password"])&&!isLoggedIn())
 {
-	beleptet($_POST["username"],$_POST["password"],$conn);
-	if(!isLoggedIn()) { ?>
+	beleptet($_POST["email"],$_POST["password"],$conn);
+	if(!isLoggedIn()){ ?>
 	<h5>Rossz felhasználónév vagy jelszó</h5>
 	<?php }
 	else if(isLoggedIn()){
@@ -24,7 +29,7 @@ if(isSet($_POST["username"])&&isSet($_POST["password"])&&!isLoggedIn())
 		else if($_SESSION['level']==1)
 			header("Location:teacher/dashboard.php");
 	 }
-}	 
+}
 $conn->close();
 	
 ?>
@@ -32,9 +37,9 @@ $conn->close();
 <html>
   <head>
     <title>Bejelentkezés</title>
-    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/rft/css/main.css">
     
-    <link rel="stylesheet" href="/css/login.css">
+    <link rel="stylesheet" href="/rft/css/login.css">
     
   </head>
   <body>
@@ -44,8 +49,8 @@ $conn->close();
         <h2 id="add-meg-az-adataid">Add meg az adataid:</h2>
 
 <form id="login" action="index.php" method="post">
-  <input id="username" placeholder="Felhasználónév" />
-  <input id="password" placeholder="Jelszó" type="password" />
+  <input name="email" id="email" placeholder="Email" />
+  <input name="password"  id="password" placeholder="Jelszó" type="password" />
   <div id="buttons">
     <input type="submit" value="Bejelentkezés" />
     <a href="register.php"><input type="button" value="Regisztráció" /></a>
