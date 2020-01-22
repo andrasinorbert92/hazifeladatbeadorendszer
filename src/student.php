@@ -1,6 +1,7 @@
 <?php
 session_start();
-if(!isSet($_SESSION['belepve'])||$_SESSION['level']!=0){
+require_once("common.php");
+if(!isLoggedIn()||$_SESSION['level']!=0){
 	header("Location:index.php");
 }
 $servername = "localhost";

@@ -6,8 +6,8 @@ else
 	return false; 
 }
 
-function beleptet($name,$pswd,$conn) {
-	$sql = "SELECT id FROM users WHERE email='".$name."' AND passwd='".$pswd."'";
+function beleptet($email,$pswd,$conn) {
+	$sql = "SELECT id FROM users WHERE email='".$email."' AND passwd='".$pswd."'";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
@@ -18,7 +18,7 @@ if ($result->num_rows > 0) {
     }
 }
 else{
-		$sql = "SELECT id FROM teachers WHERE email='".$name."' AND passwd='".$pswd."'";
+		$sql = "SELECT id FROM teachers WHERE email='".$email."' AND passwd='".$pswd."'";
 		$result = $conn->query($sql);
 		if ($result->num_rows > 0) {
 		session_start();

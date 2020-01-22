@@ -1,6 +1,7 @@
 <?php
 session_start();
-if(!isSet($_SESSION['belepve'])){
+require_once("../common.php");
+if(!isLoggedIn()||$_SESSION['level']!=1){
 	header("Location:../index.php");
 }
 
