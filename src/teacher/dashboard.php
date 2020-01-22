@@ -1,6 +1,6 @@
 <?php
 session_start();
-if(!isSet($_SESSION['belepve'])){
+if(!isSet($_SESSION['belepve'])||$_SESSION['level']!=1){
 	header("Location:../index.php");
 }
 
@@ -23,7 +23,7 @@ if(!isSet($_SESSION['belepve'])){
 
         <p class="centered"><a href="classes.php">Osztályok</a></p>
 
-        <form action="kijelentkezes.php" method="post">
+        <form action="../kijelentkezes.php" method="post">
           <input type="submit" value="Kijelentkezés" />
         </form>
 

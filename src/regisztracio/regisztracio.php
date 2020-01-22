@@ -1,8 +1,8 @@
 <html>
 <head>
 <meta charset="UTF-8" lang="HU">
-<link rel="stylesheet" type="text/css" href="./css/main.css">
-<link rel="stylesheet" type="text/css" href="./css/login.css">
+<link rel="stylesheet" type="text/css" href="../css/main.css">
+<link rel="stylesheet" type="text/css" href="../css/login.css">
 <title>Regisztrációs űrlap</title>
 </head>
 <body>

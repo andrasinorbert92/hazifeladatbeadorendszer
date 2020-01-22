@@ -53,7 +53,7 @@ $conn->close();
   <input name="password"  id="password" placeholder="Jelszó" type="password" />
   <div id="buttons">
     <input type="submit" value="Bejelentkezés" />
-    <a href="register.php"><input type="button" value="Regisztráció" /></a>
+    <a href="/rft/regisztracio/regisztracio.php"><input type="button" value="Regisztráció" /></a>
   </div>
   <p id="reminder"><a href="reminder.php">Elfelejtettem a jelszavam!</a></p>
 </form>

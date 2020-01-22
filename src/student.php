@@ -1,6 +1,6 @@
 <?php
 session_start();
-if(!isSet($_SESSION['belepve'])){
+if(!isSet($_SESSION['belepve'])||$_SESSION['level']!=0){
 	header("Location:index.php");
 }
 
@@ -89,7 +89,7 @@ if(!isSet($_SESSION['belepve'])){
 
         <!-- Legyen egy kilepes.php, melynek csak az a feladata, hogy --
           -- kijelentkeztet, majd átdob az index.php-ra. -->
-        <form action="kilepes.php" action="post">
+        <form action="kijelentkezes.php" action="post">
           <input type="submit" value="Kijelentkezés" />
         </form>
 

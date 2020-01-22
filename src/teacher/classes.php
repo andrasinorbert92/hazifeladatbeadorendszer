@@ -1,8 +1,15 @@
+<?php
+session_start();
+if(!isSet($_SESSION['belepve'])||$_SESSION['level']!=1){
+	header("Location:../index.php");
+}
+
+?>
 <html>
   <head>
     <title>Osztályok</title>
-    <link rel="stylesheet" href="/css/main.css">
-    <link rel="stylesheet" href="/css/classes.css">
+    <link rel="stylesheet" href="/rft/css/main.css">
+    <link rel="stylesheet" href="/rft/css/classes.css">
   </head>
   <body>
     <h1>Házifeladat-beadó Rendszer</h1>

@@ -1,9 +1,16 @@
+<?php
+session_start();
+if(!isSet($_SESSION['belepve'])||$_SESSION['level']!=1){
+	header("Location:../index.php");
+}
+
+?>
 <html>
   <head>
     <title>Új házifeladat kiírása</title>
-    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/rft/css/main.css">
     
-    <link rel="stylesheet" href="/css/create_assignment.css">
+    <link rel="stylesheet" href="/rft/css/create_assignment.css">
     
   </head>
   <body>
