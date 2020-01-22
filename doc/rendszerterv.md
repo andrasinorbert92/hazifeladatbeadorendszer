@@ -6,7 +6,7 @@
 	
 	MySQL adatbázis kapcsolat:
 	Egy külső adatbázis kapcsolat létrehozása ahonnan adatokat kér le és dolgoz fel.
-
+ 
 
 ##2. Adatvédelmi terv
 
