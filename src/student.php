@@ -3,7 +3,15 @@ session_start();
 if(!isSet($_SESSION['belepve'])||$_SESSION['level']!=0){
 	header("Location:index.php");
 }
+$servername = "localhost";
+$username = "rft";
+$password = "BCh32TzA14MyhdsZ";
+$dbname = "beadando";
 
+$conn = new mysqli($servername, $username, $password,$dbname);
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
 ?>
 <html>
   <head>
@@ -17,11 +25,17 @@ if(!isSet($_SESSION['belepve'])||$_SESSION['level']!=0){
     <h1>Házifeladat-beadó Rendszer</h1>
     <div id="valign">
       <div id="box">
-          <?php
-           // Itt esetleg Diák helyett ki lehet íratni az illető nevét
-           // headerként
-           ?>
-        <h2 id="diák">Diák</h2>
+
+        <h2 id="diák">          <?php
+				$sql = "SELECT * FROM users WHERE id = ".$_SESSION['belepve'];
+				$result = $conn->query($sql);
+				echo mysqli_error($conn);
+				if ($result->num_rows > 0) {
+					while($row = $result->fetch_assoc()) {
+						echo $row["firstname"]." ".$row["lastname"];
+					}
+				}
+           ?></h2>
 
         <h3 id="házifeladatok">Házifeladatok</h3>
 
@@ -86,9 +100,6 @@ if(!isSet($_SESSION['belepve'])||$_SESSION['level']!=0){
             </form>
           </li>
         </ul>
-
-        <!-- Legyen egy kilepes.php, melynek csak az a feladata, hogy --
-          -- kijelentkeztet, majd átdob az index.php-ra. -->
         <form action="kijelentkezes.php" action="post">
           <input type="submit" value="Kijelentkezés" />
         </form>
